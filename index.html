@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetBuddy - Achieve Financial Freedom</title>
+    
+    <!-- This is the favicon link for the title bar -->
+    <link rel="icon" type="image/png" href="https://placehold.co/32x32/6366f1/ffffff?text=BB">
+    
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Inter font from Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        .font-inter { font-family: 'Inter', sans-serif; }
+    </style>
+
+    <!-- Custom animations for fade-in effects -->
+    <style>
+        /* Fade-in animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .animate-fade-in-up-delay {
+            animation: fadeInUp 0.6s ease-out 0.2s forwards;
+        }
+        .animate-fade-in-up-delay-2 {
+            animation: fadeInUp 0.6s ease-out 0.4s forwards;
+        }
+        .animate-fade-in-up-delay-3 {
+            animation: fadeInUp 0.6s ease-out 0.6s forwards;
+        }
+        
+        /* Prevent animation on initial load until scrolled into view */
+        .animate-on-scroll {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter text-gray-800 antialiased">
+
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto flex items-center justify-between p-4 lg:px-8">
+            <!-- Logo and App Name -->
+            <a href="./index.html" class="flex items-center gap-2 text-2xl font-bold text-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                BudgetBuddy
+            </a>
+            <!-- Desktop Navigation Links -->
+            <div class="hidden space-x-8 md:flex">
+                <a href="#features" class="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-indigo-600">Features</a>
+                <a href="#testimonials" class="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-indigo-600">Testimonials</a>
+                <a href="#contact" class="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-indigo-600">Contact</a>
+            </div>
+            <!-- Call to Action Button -->
+            <a href="http://localhost/auth/index.php" class="hidden rounded-full bg-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-indigo-700 hover:scale-105 md:block">
+                Get Started
+            </a>
+            <!-- Mobile Menu Button - Placeholder -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="rounded-full p-2 text-gray-600 hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-20 lg:py-28">
+            <div class="container mx-auto flex flex-col items-center justify-center gap-8 px-4 text-center">
+                <h1 class="max-w-3xl text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl lg:text-6xl animate-fade-in-up">
+                    Achieve Your Financial Dreams with <span class="text-indigo-600">BudgetBuddy</span>
+                </h1>
+                <p class="max-w-2xl text-lg text-gray-600 md:text-xl animate-fade-in-up-delay">
+                    Take control of your money, effortlessly track your spending, and set smart budgets to build a secure future.
+                </p>
+                <div class="flex gap-4 animate-fade-in-up-delay-2">
+                    <a href="#signup" class="rounded-full bg-indigo-600 px-8 py-3 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:bg-indigo-700 hover:scale-105">
+                        Start for Free
+                    </a>
+                    <a href="#features" class="rounded-full border border-indigo-600 bg-transparent px-8 py-3 text-lg font-semibold text-indigo-600 transition-all duration-300 hover:bg-indigo-50 hover:scale-105">
+                        Learn More
+                    </a>
+                </div>
+                <!-- Mockup Image Placeholder -->
+                <div class="mt-12 w-full max-w-4xl animate-fade-in-up-delay-3">
+                    <img
+                        src="./mockup.jpg"
+                        alt="BudgetBuddy Dashboard"
+                        class="w-full rounded-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.3)] transition-transform duration-500 hover:scale-105"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="bg-white py-20 lg:py-28 animate-on-scroll">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Simplify Your Finances</h2>
+                <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+                    BudgetBuddy gives you the tools you need to manage your money with confidence, all in one place.
+                </p>
+                <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Feature Card 1 -->
+                    <div class="group rounded-2xl bg-gray-100 p-8 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-500 text-white transition-transform duration-300 group-hover:rotate-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M2 13V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><path d="M8 8v12M12 16V8M16 12v4"></path></svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">Real-time Insights</h3>
+                        <p class="mt-2 text-gray-600">
+                            See where your money is going with powerful, real-time analytics and visualizations. Understand your spending habits at a glance.
+                        </p>
+                    </div>
+                    <!-- Feature Card 2 -->
+                    <div class="group rounded-2xl bg-gray-100 p-8 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500 text-white transition-transform duration-300 group-hover:rotate-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M11 11c0 2-2 2-2 0s2-2 2 0"></path><path d="M12 2a10 10 0 1 0 0 20a10 10 0 0 0 0-20z"></path><path d="M12 14c-2 0-4 2-4 4s2 4 4 4a6 6 0 0 0 0-12"></path></svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">Smart Budgeting</h3>
+                        <p class="mt-2 text-gray-600">
+                            Create and manage flexible budgets that adapt to your lifestyle. Get alerts before you overspend.
+                        </p>
+                    </div>
+                    <!-- Feature Card 3 -->
+                    <div class="group rounded-2xl bg-gray-100 p-8 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white transition-transform duration-300 group-hover:rotate-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect x="1" y="4" width="22" height="16" rx="2"></rect><path d="M1 10h22"></path><path d="M7 15h0.01"></path></svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">Expense Tracking</h3>
+                        <p class="mt-2 text-gray-600">
+                            Easily link your bank accounts and automatically categorize your transactions for effortless tracking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="bg-indigo-50 py-20 lg:py-28 animate-on-scroll">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">What Our Users Are Saying</h2>
+                <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+                    Join thousands of people who are taking control of their financial future.
+                </p>
+                <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Testimonial Card 1 -->
+                    <div class="rounded-2xl bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="mt-4 text-gray-600 italic">
+                            "BudgetBuddy completely changed my relationship with money. I finally know where my money is going, and I've started saving for the first time in my life!"
+                        </p>
+                        <div class="mt-6 flex items-center justify-center gap-4">
+                            <img src="https://placehold.co/48x48/6366f1/ffffff?text=JN" alt="User avatar" class="h-12 w-12 rounded-full" />
+                            <div class="text-left">
+                                <p class="font-semibold text-gray-900">Jane N.</p>
+                                <p class="text-sm text-gray-500">Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="rounded-2xl bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="mt-4 text-gray-600 italic">
+                            "The budgeting features are intuitive and the insights are incredibly helpful. I'm now on track to pay off my student loans years ahead of schedule."
+                        </p>
+                        <div class="mt-6 flex items-center justify-center gap-4">
+                            <img src="https://placehold.co/48x48/6366f1/ffffff?text=MT" alt="User avatar" class="h-12 w-12 rounded-full" />
+                            <div class="text-left">
+                                <p class="font-semibold text-gray-900">Michael T.</p>
+                                <p class="text-sm text-gray-500">Young Professional</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial Card 3 -->
+                    <div class="rounded-2xl bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <p class="mt-4 text-gray-600 italic">
+                            "As a small business owner, tracking personal and business finances can be tough. BudgetBuddy makes it simple and easy to stay on top of everything."
+                        </p>
+                        <div class="mt-6 flex items-center justify-center gap-4">
+                            <img src="https://placehold.co/48x48/6366f1/ffffff?text=AL" alt="User avatar" class="h-12 w-12 rounded-full" />
+                            <div class="text-left">
+                                <p class="font-semibold text-gray-900">Amanda L.</p>
+                                <p class="text-sm text-gray-500">Small Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="signup" class="py-20 lg:py-28 animate-on-scroll">
+            <div class="container mx-auto rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 p-12 text-center text-white shadow-xl transition-transform duration-300 hover:scale-[1.01]">
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-16 w-16 text-white"><path d="M4.5 16.5V11a7.5 7.5 0 0 1 15 0v5.5"></path><path d="M12 11h.01"></path><path d="M12 21h.01"></path><path d="M12 16h.01"></path><path d="M12 19h.01"></path><path d="M12 13h.01"></path><path d="M4.5 16.5h15"></path></svg>
+                    <h2 class="text-4xl font-bold">Ready to Start Your Journey?</h2>
+                    <p class="max-w-2xl text-lg text-white/90">
+                        Join thousands of satisfied users and take the first step towards financial freedom. It's free to get started!
+                    </p>
+                    <a href="http://localhost/auth/register.php" class="mt-6 rounded-full bg-white px-8 py-3 text-lg font-semibold text-indigo-600 shadow-lg transition-all duration-300 hover:bg-gray-100 hover:scale-105">
+                        Sign Up Now
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex flex-col items-center justify-center gap-4 border-b border-gray-700 pb-8 md:flex-row md:justify-between">
+                <a href="#" class="flex items-center gap-2 text-2xl font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-indigo-400">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    BudgetBuddy
+                </a>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
+                    <a href="#features" class="text-sm font-medium text-gray-400 transition-colors duration-200 hover:text-white">Features</a>
+                    <a href="#testimonials" class="text-sm font-medium text-gray-400 transition-colors duration-200 hover:text-white">Testimonials</a>
+                    <a href="#signup" class="text-sm font-medium text-gray-400 transition-colors duration-200 hover:text-white">Contact</a>
+                </div>
+            </div>
+            <p class="mt-8 text-sm text-gray-500">&copy; 2025 BudgetBuddy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer to trigger animations on scroll
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
